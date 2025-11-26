@@ -1,173 +1,217 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt-BR"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Meus Grupos</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#137fec",
-            "background-light": "#f6f7f8",
-            "background-dark": "#101922",
-          },
-          fontFamily: {
-            "display": ["Plus Jakarta Sans", "sans-serif"]
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-        },
-      },
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    }
-    .material-symbols-outlined.filled {
-      font-variation-settings: 'FILL' 1;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Meus Grupos</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
 <body class="font-display bg-background-light dark:bg-background-dark">
-<div class="relative flex h-auto min-h-screen w-full flex-col">
-<header class="sticky top-0 z-10 flex flex-col bg-background-light/80 pt-4 backdrop-blur-sm dark:bg-background-dark/80">
-<div class="flex items-center justify-between px-4 pb-2">
-<div class="flex w-12 items-center justify-start">
-<button class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-transparent p-0 text-gray-800 dark:text-white">
-    <div class="flex flex-col ">
-        <span class="material-symbols-outlined" style="font-size: 28px;">settings</span>
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <header
+            class="sticky top-0 z-10 flex flex-col bg-background-light/80 pt-4 backdrop-blur-sm dark:bg-background-dark/80">
+            <div class="flex items-center justify-between px-4 pb-2">
+                <div class="flex w-12 items-center justify-start">
+                    <button
+                        class="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-transparent p-0 text-gray-800 dark:text-white">
+                        <div class="flex flex-col ">
+                            <span class="material-symbols-outlined" style="font-size: 28px;">settings</span>
+                        </div>
+
+                    </button>
+                </div>
+                <h1
+                    class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">
+                    Meus Grupos</h1>
+                <div class="flex w-12 items-center justify-end">
+                </div>
+            </div>
+            <div class="px-4 pb-2">
+                <div class="relative">
+                    <span
+                        class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+                    <input
+                        class="h-10 w-full rounded-full border-none bg-gray-100 pl-10 pr-4 text-sm text-gray-900 placeholder:text-gray-500 focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-400"
+                        placeholder="Pesquisar em meus grupos" type="text" />
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 flex-col px-4 pb-24">
+            <div class="mt-4 flex flex-col gap-3 pb-6">
+                <div
+                    class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
+                    <div class="flex min-w-0 items-center gap-4">
+                        <div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                            data-alt="People at a debate club meeting"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCouZvR-UHbkyRVtW26bJGmzO67Gxexlkv26WHQqEFpjGEJGZhu6nMdgxXAk-aE3VEixFfmvShZzxhPqlAFeU8rB161z0uMSG69W1E-LZgiQ8KBBmEUFy-qWlXO5qTLNXI-e4JgEcLwZXneNi-wCpGBFguoL7Dob82XLo551nwEjrez-9FD-fMVYob-ovYg7gCsZeRLz9EF0pKzPhQXw4Huy3rvNgJT2ogXDdQyiM2ET3huVVXzZTueF1CPH7a4tYUMgLHfYP2q9JVN");'>
+                        </div>
+                        <div class="flex min-w-0 flex-col justify-center">
+                            <p class="truncate text-base font-bold text-gray-900 dark:text-white">Clube de Debate</p>
+                            <p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">Discussões e
+                                eventos semanais</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
+                    <div class="flex min-w-0 items-center gap-4">
+                        <div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                            data-alt="University athletics team logo"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB87Zn0vNGQoWK2ry3nkv2UDkNwO_zwMRVE_pzydBIo7_cB9YTaV0QTEjN5yYRqC2z708bMNslgjWxg7xwoDKL9yq3gFTcbX01aR7aAhziHaoe8ztVP0OuIhdCsf1B7AzfzRnN6Nt9uBEw0XPV2sSM_tn508DRwlPLqjZTmWNZkM7nOcXj1RoR2K8psCDo8GgAnSetRFZA8A1NCwB_ah2IhHL2N9gn9mJ5nrwLssJ9M4h1qcbhbMnmGa8cYjQH0RE-asEv3coy5OWhd");'>
+                        </div>
+                        <div class="flex min-w-0 flex-col justify-center">
+                            <p class="truncate text-base font-bold text-gray-900 dark:text-white">Atlética de Engenharia
+                            </p>
+                            <p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">112 membros</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
+                    <div class="flex min-w-0 items-center gap-4">
+                        <div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                            data-alt="Books and papers for a calculus study group"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLNJdfEC03QfN49_EbKtUYr7OlGcxVm-AnVpdS_3FTyt1BAkq36OPe-GaQ2kJgf8pjZdfRUPyPlnfbW-mDUQuRQajDSk776bZHQWjkyEqSEhwIfCvc_YMmbHrnQcrufJJ5Mf5i2eVhP0zTcAHpG2Ib9ONriEwHw9uzvODItkrOXtMgPt8Lg3rfJ75sxWP2pkLmNwYru0YiD1atAlChj27FTQjDF3iUQc4LhTXzlbfexQiESkpz6WOT7Ojqxwdp25ypfz3k4jBgRN18");'>
+                        </div>
+                        <div class="flex min-w-0 flex-col justify-center">
+                            <p class="truncate text-base font-bold text-gray-900 dark:text-white">Grupo de estudos de
+                                Cálculo I</p>
+                            <p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">24 membros</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
+                    <div class="flex min-w-0 items-center gap-4">
+                        <div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                            data-alt="Students collaborating on a startup project"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPOCUNEM_PzFkCJZHFFnHL3AjAbrCn5OlyBGckIpv-s1XhyeMeTnIL-1yvvoOcIJmCYtsMZMdWru6NcO8p9EQsFoNBov_wP8oQ2O0nGUPyuVtJEHAsLnMX5HvDppYjh7T66z1g0z-FptMN-gfc2SURlH59kyrcO8iiy-3RjLAxxt_kiP-Q4DEgmwUD0tlx-LQjm-XI6gBLkhas62SUYChm4QRzKBrZFkT_ffg2PuRihxrfjf2itc31sTOhK25Lt0QWoArpSc_3oqTq");'>
+                        </div>
+                        <div class="flex min-w-0 flex-col justify-center">
+                            <p class="truncate text-base font-bold text-gray-900 dark:text-white">Startups &amp;
+                                Inovação</p>
+                            <p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">Networking e Pitch
+                                Decks</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
+                    <div class="flex min-w-0 items-center gap-4">
+                        <div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat"
+                            data-alt="A chess board in mid-game"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAu4Az4kqHOp5_LiyEQuhyTmTG4XqXmabA7KXWJ27PD8xeoMhRFAQMNZhCfAgQcOF_takRyQf5YijGUn_rUFwLgVeNrxJjz7Ro2YSGn5Mib20kT2YwvKxJeuEHb2d9E_0am5qLVhWf9f6JTuPYjaXSvXxFzt8hiOU6p58WaDWJVT95zrLz2VGmVIzBW05QgoekJVpyQ8rKXeFNmme1WP9s3MROCEDjGjAJPUfO0j_djHjZyATOZfo2GQQnB85KiG-jzKB_WFt-krsFA");'>
+                        </div>
+                        <div class="flex min-w-0 flex-col justify-center">
+                            <p class="truncate text-base font-bold text-gray-900 dark:text-white">Clube de Xadrez</p>
+                            <p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">Partidas toda
+                                sexta-feira</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
+                            <span class="material-symbols-outlined">more_vert</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 left-0 right-0 z-20 border-t border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-700 dark:bg-background-dark/80">
+
+            <div class="mx-auto flex h-20 max-w-md items-center justify-around px-4">
+                <a class="flex flex-col items-center justify-center text-primary" href="index.html">
+                    <span class="material-symbols-outlined filled !text-3xl">groups</span>
+                    <span class="text-xs font-bold">Meus Grupos</span>
+                </a>
+                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+                    href="explorar.html">
+                    <span class="material-symbols-outlined !text-3xl">language</span>
+                    <span class="text-xs font-medium">Explorar Grupos</span>
+                </a>
+                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+                    href="criar.html">
+                    <span class="material-symbols-outlined !text-3xl">add_circle</span>
+                    <span class="text-xs font-medium">Criar Grupo</span>
+                </a>
+                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
+                    href="carona.html">
+                    <span class="material-symbols-outlined !text-3xl">directions_car</span>
+                    <span class="text-xs font-medium">Carona</span>
+                </a>
+            </div>
+        </nav>
     </div>
 
-</button>
-</div>
-<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-gray-900 dark:text-white">Meus Grupos</h1>
-<div class="flex w-12 items-center justify-end">
-</div>
-</div>
-<div class="px-4 pb-2">
-<div class="relative">
-<span class="material-symbols-outlined pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
-<input class="h-10 w-full rounded-full border-none bg-gray-100 pl-10 pr-4 text-sm text-gray-900 placeholder:text-gray-500 focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-400" placeholder="Pesquisar em meus grupos" type="text"/>
-</div>
-</div>
-</header>
-<main class="flex-1 flex-col px-4 pb-24">
-<div class="mt-4 flex flex-col gap-3 pb-6">
-<div class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-<div class="flex min-w-0 items-center gap-4">
-<div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat" data-alt="People at a debate club meeting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCouZvR-UHbkyRVtW26bJGmzO67Gxexlkv26WHQqEFpjGEJGZhu6nMdgxXAk-aE3VEixFfmvShZzxhPqlAFeU8rB161z0uMSG69W1E-LZgiQ8KBBmEUFy-qWlXO5qTLNXI-e4JgEcLwZXneNi-wCpGBFguoL7Dob82XLo551nwEjrez-9FD-fMVYob-ovYg7gCsZeRLz9EF0pKzPhQXw4Huy3rvNgJT2ogXDdQyiM2ET3huVVXzZTueF1CPH7a4tYUMgLHfYP2q9JVN");'></div>
-<div class="flex min-w-0 flex-col justify-center">
-<p class="truncate text-base font-bold text-gray-900 dark:text-white">Clube de Debate</p>
-<p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">Discussões e eventos semanais</p>
-</div>
-</div>
-<div class="shrink-0">
-<button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-<div class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-<div class="flex min-w-0 items-center gap-4">
-<div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat" data-alt="University athletics team logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB87Zn0vNGQoWK2ry3nkv2UDkNwO_zwMRVE_pzydBIo7_cB9YTaV0QTEjN5yYRqC2z708bMNslgjWxg7xwoDKL9yq3gFTcbX01aR7aAhziHaoe8ztVP0OuIhdCsf1B7AzfzRnN6Nt9uBEw0XPV2sSM_tn508DRwlPLqjZTmWNZkM7nOcXj1RoR2K8psCDo8GgAnSetRFZA8A1NCwB_ah2IhHL2N9gn9mJ5nrwLssJ9M4h1qcbhbMnmGa8cYjQH0RE-asEv3coy5OWhd");'></div>
-<div class="flex min-w-0 flex-col justify-center">
-<p class="truncate text-base font-bold text-gray-900 dark:text-white">Atlética de Engenharia</p>
-<p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">112 membros</p>
-</div>
-</div>
-<div class="shrink-0">
-<button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-<div class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-<div class="flex min-w-0 items-center gap-4">
-<div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat" data-alt="Books and papers for a calculus study group" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLNJdfEC03QfN49_EbKtUYr7OlGcxVm-AnVpdS_3FTyt1BAkq36OPe-GaQ2kJgf8pjZdfRUPyPlnfbW-mDUQuRQajDSk776bZHQWjkyEqSEhwIfCvc_YMmbHrnQcrufJJ5Mf5i2eVhP0zTcAHpG2Ib9ONriEwHw9uzvODItkrOXtMgPt8Lg3rfJ75sxWP2pkLmNwYru0YiD1atAlChj27FTQjDF3iUQc4LhTXzlbfexQiESkpz6WOT7Ojqxwdp25ypfz3k4jBgRN18");'></div>
-<div class="flex min-w-0 flex-col justify-center">
-<p class="truncate text-base font-bold text-gray-900 dark:text-white">Grupo de estudos de Cálculo I</p>
-<p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">24 membros</p>
-</div>
-</div>
-<div class="shrink-0">
-<button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-<div class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-<div class="flex min-w-0 items-center gap-4">
-<div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat" data-alt="Students collaborating on a startup project" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPOCUNEM_PzFkCJZHFFnHL3AjAbrCn5OlyBGckIpv-s1XhyeMeTnIL-1yvvoOcIJmCYtsMZMdWru6NcO8p9EQsFoNBov_wP8oQ2O0nGUPyuVtJEHAsLnMX5HvDppYjh7T66z1g0z-FptMN-gfc2SURlH59kyrcO8iiy-3RjLAxxt_kiP-Q4DEgmwUD0tlx-LQjm-XI6gBLkhas62SUYChm4QRzKBrZFkT_ffg2PuRihxrfjf2itc31sTOhK25Lt0QWoArpSc_3oqTq");'></div>
-<div class="flex min-w-0 flex-col justify-center">
-<p class="truncate text-base font-bold text-gray-900 dark:text-white">Startups &amp; Inovação</p>
-<p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">Networking e Pitch Decks</p>
-</div>
-</div>
-<div class="shrink-0">
-<button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-<div class="flex cursor-pointer items-center justify-between gap-4 rounded-xl bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-800">
-<div class="flex min-w-0 items-center gap-4">
-<div class="h-14 w-14 flex-shrink-0 rounded-full bg-cover bg-center bg-no-repeat" data-alt="A chess board in mid-game" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAu4Az4kqHOp5_LiyEQuhyTmTG4XqXmabA7KXWJ27PD8xeoMhRFAQMNZhCfAgQcOF_takRyQf5YijGUn_rUFwLgVeNrxJjz7Ro2YSGn5Mib20kT2YwvKxJeuEHb2d9E_0am5qLVhWf9f6JTuPYjaXSvXxFzt8hiOU6p58WaDWJVT95zrLz2VGmVIzBW05QgoekJVpyQ8rKXeFNmme1WP9s3MROCEDjGjAJPUfO0j_djHjZyATOZfo2GQQnB85KiG-jzKB_WFt-krsFA");'></div>
-<div class="flex min-w-0 flex-col justify-center">
-<p class="truncate text-base font-bold text-gray-900 dark:text-white">Clube de Xadrez</p>
-<p class="truncate text-sm font-normal text-gray-500 dark:text-gray-400">Partidas toda sexta-feira</p>
-</div>
-</div>
-<div class="shrink-0">
-<button class="flex size-8 items-center justify-center text-gray-500 dark:text-gray-400">
-<span class="material-symbols-outlined">more_vert</span>
-</button>
-</div>
-</div>
-</div>
-</main>
-<nav class="fixed bottom-0 left-0 right-0 z-20 border-t border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-700 dark:bg-background-dark/80">
+</body>
 
-<div class="mx-auto flex h-20 max-w-md items-center justify-around px-4">
-<a class="flex flex-col items-center justify-center text-primary" href="index.html">
-<span class="material-symbols-outlined filled !text-3xl">groups</span>
-<span class="text-xs font-bold">Meus Grupos</span>
-</a>
-<a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="explorar.html">
-<span class="material-symbols-outlined !text-3xl">language</span>
-<span class="text-xs font-medium">Explorar Grupos</span>
-</a>
-<a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="criar.html">
-<span class="material-symbols-outlined !text-3xl">add_circle</span>
-<span class="text-xs font-medium">Criar Grupo</span>
-</a>
-<a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary" href="carona.html">
-<span class="material-symbols-outlined !text-3xl">directions_car</span>
-<span class="text-xs font-medium">Carona</span>
-</a>
-</div>
-</nav>
-</div>
-
-</body></html>
+</html>
