@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Detalhes do Grupo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#007AFF", // Blue from the primary button
+                        "background-light": "#F3F4F6", // Light gray
+                        "background-dark": "#111827", // Dark blue-gray from screenshot
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1F2937",
+                        "text-primary-light": "#111827",
+                        "text-primary-dark": "#FFFFFF",
+                        "text-secondary-light": "#6B7280",
+                        "text-secondary-dark": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem", // 16px
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="w-full max-w-sm mx-auto flex flex-col min-h-screen" id="root">
+        <div class="flex-grow bg-background-light dark:bg-background-dark">
+            <header class="sticky top-0 z-10 bg-background-dark/80 backdrop-blur-sm">
+                <div class="relative h-14 flex items-center justify-center p-4">
+                    <div class="absolute left-4">
+                        <a href="grupos.html" class="text-text-primary-dark">
+                            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+                        </a>
+                    </div>
+                    <h1 class="text-lg font-semibold text-text-primary-dark">Detalhes do Grupo</h1>
+                </div>
+            </header>
+            <main class="relative">
+                <div>
+                    <img alt="Foto do campus universitário" class="w-full h-48 object-cover"
+                        src="img/empre.webp" />
+                </div>
+                <div class="relative bg-card-dark p-6 rounded-t-2xl -mt-8 mx-4 shadow-lg">
+                    <div class="flex justify-between items-start">
+                        <h2 class="text-2xl font-bold text-text-primary-dark">Empreendedores Negros</h2>
+                        <button class="text-text-secondary-dark">
+                            <span class="material-symbols-outlined text-xl">edit</span>
+                        </button>
+                    </div>
+                    <p class="mt-2 text-text-secondary-dark text-sm leading-relaxed">
+                        Um espaço de apoio mútuo, networking e desenvolvimento para estudantes negros empreendedores.
+                        Conecte-se, troque experiências e impulsione seus negócios.
+                    </p>
+                    <div class="mt-6 grid grid-cols-1 gap-4">
+                        <a href="mensagens.html"
+                            class="bg-primary text-white flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm">
+                            <span class="material-symbols-outlined text-lg">chat_bubble</span>
+                            Mensagem
+                        </a>
+                        <!-- <button
+                            class="bg-gray-700 text-text-primary-dark flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm">
+                            <span class="material-symbols-outlined text-lg">calendar_month</span>
+                            Eventos
+                        </button> -->
+                    </div>
+                </div>
+                <div class="px-4 py-6 space-y-6 bg-background-dark">
+                    <section>
+                        <h3 class="text-lg font-bold text-text-primary-dark mb-4">Membros (34)</h3>
+                        <div class="flex items-center space-x-[-12px]">
+                            <!-- <img alt="Avatar do primeiro membro"
+                                class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf2yCwQClYmnETllGeDWFV3qWEsvzHKl-dw8-F3tRFZS40LechkBqHy6r_vWaOFrBOXK1EW82r-i9VmowSM4OX5OcD-VaFcP5EZHV9dIF_jRcy7PAdTD6K6igHR5FTjH1rBAVqPaTZ8Wb0q8wS3eXvVn5ZbzJNkuY_Orsy7rPG49Ni0eypvKCzE6P6WQFqOZsc7h3eCdYCWSl50oVp_Sy0iooLS0D_FU1b080gDxebc1-vq-st5ZPYpL0etj8XUpvJS40OeiulymvV" /> -->
+                            <img alt="Avatar do segundo membro"
+                                class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                                src="https://t4.ftcdn.net/jpg/06/73/67/09/240_F_673670917_sIe1sZRlqJvZBdpLckvYC58AJJjNaoDP.jpg" />
+                            <img alt="Avatar do terceiro membro"
+                                class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                                src="https://t3.ftcdn.net/jpg/05/52/96/72/240_F_552967235_ncUlW7D8iIMxUcCi0HM03C0SLuTCfquq.jpg" />
+                            <img alt="Avatar do quarto membro"
+                                class="w-10 h-10 rounded-full border-2 border-background-dark object-cover"
+                                src="https://t3.ftcdn.net/jpg/15/42/46/76/240_F_1542467629_S9I6xhRDTpxDa6Q5QQkB1ETJxXcwWgTa.jpg" />
+                            <div
+                                class="w-10 h-10 rounded-full bg-card-dark flex items-center justify-center border-2 border-background-dark">
+                                <span class="text-xs font-semibold text-text-secondary-dark">+29</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3 class="text-lg font-bold text-text-primary-dark mb-4">Atividade Recente</h3>
+                        <div class="space-y-3">
+                            <div class="bg-card-dark p-4 rounded-lg flex items-start gap-4">
+                                <img alt="Avatar de Tainá Costa" class="w-10 h-10 rounded-full object-cover"
+                                    src="https://t4.ftcdn.net/jpg/06/73/67/09/240_F_673670917_sIe1sZRlqJvZBdpLckvYC58AJJjNaoDP.jpg" />
+                                <div>
+                                    <p class="text-sm text-text-primary-dark leading-snug">
+                                        <span class="font-semibold">Amanda Costa</span> adicionou um novo evento: <a
+                                            class="text-primary font-medium" href="#">Workshop de Pitch para
+                                            Startups</a>
+                                    </p>
+                                    <p class="text-xs text-text-secondary-dark mt-1">4 horas atrás</p>
+                                </div>
+                            </div>
+                            <div class="bg-card-dark p-4 rounded-lg flex items-start gap-4">
+                                <img alt="Avatar de Marcos Silva" class="w-10 h-10 rounded-full object-cover"
+                                    src="https://t3.ftcdn.net/jpg/15/42/46/76/240_F_1542467629_S9I6xhRDTpxDa6Q5QQkB1ETJxXcwWgTa.jpg" />
+                                <div>
+                                    <p class="text-sm text-text-primary-dark leading-snug">
+                                        <span class="font-semibold">Marcos Silva</span> postou no mural: "Alguém tem
+                                        indicação de um bom contador para MEI?"
+                                    </p>
+                                    <p class="text-xs text-text-secondary-dark mt-1">Ontem</p>
+                                </div>
+                            </div>
+                            <div class="bg-card-dark p-4 rounded-lg flex items-start gap-4">
+                                <img alt="Avatar de Laila Santos" class="w-10 h-10 rounded-full object-cover"
+                                    src="https://t3.ftcdn.net/jpg/05/52/96/72/240_F_552967235_ncUlW7D8iIMxUcCi0HM03C0SLuTCfquq.jpg" />
+                                <div>
+                                    <p class="text-sm text-text-primary-dark leading-snug">
+                                        <span class="font-semibold">Carlos Santos</span> entrou no grupo.
+                                    </p>
+                                    <p class="text-xs text-text-secondary-dark mt-1">2 dias atrás</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+
+</html>

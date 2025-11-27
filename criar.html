@@ -99,31 +99,81 @@
                         placeholder="Descreva o objetivo do grupo..."></textarea>
                 </label>
                 <div>
-                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-4 pb-2">Tipo de Grupo
+                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-4 pb-2">
+                        Tipo de Grupo
                     </h2>
-                    <div class="flex py-3">
-                        <div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-white/5 p-1">
-                            <label
-                                class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-primary has-[:checked]:shadow-lg has-[:checked]:shadow-primary/20 has-[:checked]:text-white text-white/60 text-sm font-medium leading-normal transition-all duration-200">
-                                <span class="truncate">Estudo</span>
-                                <input checked="" class="invisible w-0" name="group-type" type="radio" value="Estudo" />
-                            </label>
-                            <label
-                                class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-primary has-[:checked]:shadow-lg has-[:checked]:shadow-primary/20 has-[:checked]:text-white text-white/60 text-sm font-medium leading-normal transition-all duration-200">
-                                <span class="truncate">Evento</span>
-                                <input class="invisible w-0" name="group-type" type="radio" value="Evento" />
-                            </label>
-                            <label
-                                class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-primary has-[:checked]:shadow-lg has-[:checked]:shadow-primary/20 has-[:checked]:text-white text-white/60 text-sm font-medium leading-normal transition-all duration-200">
-                                <span class="truncate">Clube</span>
-                                <input class="invisible w-0" name="group-type" type="radio" value="Clube" />
-                            </label>
-                            <label
-                                class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-primary has-[:checked]:shadow-lg has-[:checked]:shadow-primary/20 has-[:checked]:text-white text-white/60 text-sm font-medium leading-normal transition-all duration-200">
-                                <span class="truncate">Social</span>
-                                <input class="invisible w-0" name="group-type" type="radio" value="Social" />
-                            </label>
-                        </div>
+
+                    <div class="flex flex-wrap gap-2 py-3">
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Estudo</span>
+                            <input checked="" class="invisible w-0 absolute" name="group-type" type="radio"
+                                value="Estudo" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Evento</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Evento" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Clube</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Clube" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Social</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Social" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Acadêmico</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Academico" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Tecnologia</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Tecnologia" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Jogos</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Jogos" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Mulheres</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Mulheres" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Inclusão</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Inclusao" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Acessibilidade</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio"
+                                value="Acessibilidade" />
+                        </label>
+
+                        <label
+                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
+                            <span class="truncate">Apoio Diversidade</span>
+                            <input class="invisible w-0 absolute" name="group-type" type="radio"
+                                value="ApoioDiversidade" />
+                        </label>
+
                     </div>
                 </div>
                 <div>
@@ -165,7 +215,7 @@
             class="fixed bottom-0 left-0 right-0 z-20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
             <<div class="mx-auto flex h-20 max-w-md items-center justify-around px-4">
                 <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="index.html">
+                    href="grupos.html">
                     <span class="material-symbols-outlined !text-3xl">groups</span>
                     <span class="text-xs font-medium">Meus Grupos</span>
                 </a>
