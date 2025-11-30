@@ -1,245 +1,186 @@
 <!DOCTYPE html>
 <html class="dark" lang="pt-br">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Criar Novo Grupo</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#137fec",
-                        "background-light": "#f6f7f8",
-                        "background-dark": "#101922",
-                    },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Novo Grupo</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { primary: "#137fec", "background-dark": "#101922" },
+          fontFamily: { display: ["Plus Jakarta Sans", "sans-serif"] }
         }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+    .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1 }
+  </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-        <header
-            class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-white/10">
-            <div class="flex size-12 shrink-0 items-center justify-start">
+<body class="bg-background-dark text-white min-h-screen font-display">
+  <div class="relative flex min-h-screen flex-col">
 
+    <header class="sticky top-0 z-10 bg-background-dark/90 backdrop-blur border-b border-white/10">
+      <div class="flex items-center p-4 justify-between">
+        <a href="explorar.html" class="text-white/60 hover:text-white">
+          <span class="material-symbols-outlined">close</span>
+        </a>
+        <h1 class="text-lg font-bold">Criar Novo Grupo</h1>
+        <div class="w-10"></div>
+      </div>
+    </header>
+
+    <main class="flex-1 px-4 py-6 pb-32">
+      <form id="createGroupForm" class="space-y-6">
+
+       
+        <div>
+          <label class="block text-base font-medium mb-2">Nome do Grupo</label>
+          <input required id="groupName" type="text" value="Estudo Cálculo 1" placeholder="Ex: Programação para Meninas"
+            class="w-full px-4 py-4 rounded-lg bg-white/5 border border-white/20 focus:border-primary focus:outline-none" />
+        </div>
+
+        
+        <div>
+          <label class="block text-base font-medium mb-3">Imagem do Grupo</label>
+          <div class="flex items-center gap-4">
+            <div id="preview" class="w-24 h-24 rounded-full bg-white/5 border-2 border-dashed border-white/30 flex items-center justify-center overflow-hidden">
+              <img src="https://hotmart.s3.amazonaws.com/product_pictures/2bbcd440-e547-4d2a-9027-0d9e9b17a256/calculoI.jpg" class="w-full h-full object-cover rounded-full" id="previewImg">
+              <span class="material-symbols-outlined text-4xl text-white/40 hidden" id="previewIcon">image</span>
             </div>
-            <h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Criar Novo
-                Grupo</h1>
-            <div class="flex w-12 items-center justify-end">
+            <label class="cursor-pointer">
+              <span class="px-6 py-3 bg-white/10 rounded-lg hover:bg-white/20 transition">Escolher imagem</span>
+              <input id="groupImage" type="file" accept="image/*" class="hidden" />
+            </label>
+          </div>
+        </div>
 
-            </div>
-        </header>
-        <main class="flex-1 px-4 py-3 pb-24">
-            <div class="flex flex-col gap-4">
-                <label class="flex flex-col w-full">
-                    <p class="text-white text-base font-medium leading-normal pb-2">Nome do Grupo</p>
-                    <input
-                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-white/20 bg-white/5 focus:border-primary h-14 placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
-                        placeholder="Ex: Cálculo I - Turma B" value="" />
-                </label>
-                <div>
-                    <p class="text-white text-base font-medium leading-normal pb-2">Imagem do Grupo (Opcional)</p>
-                    <div class="flex items-center gap-4">
-                        <div class="relative">
-                            <div
-                                class="w-20 h-20 rounded-full bg-white/5 border-2 border-dashed border-white/30 flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white/60 text-3xl">image</span>
-                            </div>
-                        </div>
-                        <label class="cursor-pointer">
-                            <div
-                                class="flex h-10 items-center justify-center rounded-lg bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20">
-                                Adicionar Imagem
-                            </div>
-                            <input class="hidden" type="file" />
-                        </label>
-                    </div>
-                </div>
-                <label class="flex flex-col w-full">
-                    <p class="text-white text-base font-medium leading-normal pb-2">Descrição</p>
-                    <textarea
-                        class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border border-white/20 bg-white/5 focus:border-primary min-h-36 placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
-                        placeholder="Descreva o objetivo do grupo..."></textarea>
-                </label>
-                <div>
-                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-4 pb-2">
-                        Tipo de Grupo
-                    </h2>
+        
+        <div>
+          <label class="block text-base font-medium mb-2">Descrição</label>
+          <textarea required id="groupDesc" rows="4" placeholder="Fale sobre o grupo..." class="w-full px-4 py-4 rounded-lg bg-white/5 border border-white/20 focus:border-primary focus:outline-none resize-none">Grupo de estudos para Cálculo 1 - dúvidas, materiais e monitorias</textarea>
+        </div>
 
-                    <div class="flex flex-wrap gap-2 py-3">
+        
+        <div>
+          <label class="block text-base font-medium mb-3">Etiquetas</label>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+            <label class="flex items-center gap-2"><input type="checkbox" value="mulheres"> Mulheres</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="lgbtqia"> LGBTQIA+</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="diversidade"> Diversidade</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="inclusao"> Inclusão</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="tecnologia"> Tecnologia</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="academico" checked> Acadêmico</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="estudo" checked> Estudo</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="robotica"> Robótica</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="black"> Black</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="cotistas"> Cotistas</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="jogos"> Jogos</label>
+            <label class="flex items-center gap-2"><input type="checkbox" value="evento"> Evento</label>
+          </div>
+        </div>
 
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Estudo</span>
-                            <input checked="" class="invisible w-0 absolute" name="group-type" type="radio"
-                                value="Estudo" />
-                        </label>
+        
+        <div>
+          <label class="block text-base font-medium mb-3">Privacidade</label>
+          <label class="flex items-center gap-3 mb-3">
+            <input type="radio" name="privacy" value="publico" checked class="w-5 h-5">
+            <span>Público</span>
+          </label>
+          <label class="flex items-center gap-3">
+            <input type="radio" name="privacy" value="privado" class="w-5 h-5">
+            <span>Privado</span>
+          </label>
+        </div>
 
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Evento</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Evento" />
-                        </label>
+        <button type="submit"
+          class="w-full h-14 rounded-xl bg-primary text-white font-bold text-lg shadow-lg shadow-primary/30 hover:bg-primary/90 transition">
+          Criar Grupo
+        </button>
+      </form>
+    </main>
 
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Clube</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Clube" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Social</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Social" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Acadêmico</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Academico" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Tecnologia</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Tecnologia" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Jogos</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Jogos" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Mulheres</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Mulheres" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Inclusão</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio" value="Inclusao" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Acessibilidade</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio"
-                                value="Acessibilidade" />
-                        </label>
-
-                        <label
-                            class="cursor-pointer rounded-lg bg-white/5 px-4 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/10 has-[:checked]:bg-primary has-[:checked]:text-white flex-grow text-center">
-                            <span class="truncate">Apoio Diversidade</span>
-                            <input class="invisible w-0 absolute" name="group-type" type="radio"
-                                value="ApoioDiversidade" />
-                        </label>
-
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] pt-4 pb-2">Privacidade
-                    </h2>
-                    <div class="flex flex-col gap-3 py-3">
-                        <label
-                            class="flex cursor-pointer items-start gap-4 rounded-lg border border-white/20 bg-white/5 p-4 has-[:checked]:border-primary has-[:checked]:bg-primary/20 transition-all duration-200">
-                            <input checked=""
-                                class="form-radio mt-1 h-5 w-5 border-white/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark"
-                                name="privacy" type="radio" />
-                            <div class="flex flex-col">
-                                <p class="font-medium text-white">Público</p>
-                                <p class="text-sm text-white/60">Qualquer um pode encontrar e entrar no grupo.</p>
-                            </div>
-                        </label>
-                        <label
-                            class="flex cursor-pointer items-start gap-4 rounded-lg border border-white/20 bg-white/5 p-4 has-[:checked]:border-primary has-[:checked]:bg-primary/20 transition-all duration-200">
-                            <input
-                                class="form-radio mt-1 h-5 w-5 border-white/30 bg-transparent text-primary focus:ring-primary focus:ring-offset-background-dark"
-                                name="privacy" type="radio" />
-                            <div class="flex flex-col">
-                                <p class="font-medium text-white">Privado</p>
-                                <p class="text-sm text-white/60">Apenas pessoas com convite podem encontrar e entrar.
-                                </p>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <div class="pt-4">
-                    <button
-                        class="flex w-full items-center justify-center rounded-lg bg-primary h-14 text-white text-lg font-bold leading-normal shadow-lg shadow-primary/30">
-                        Criar Grupo
-                    </button>
-                </div>
-            </div>
-        </main>
-        <nav
-            class="fixed bottom-0 left-0 right-0 z-20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
-            <<div class="mx-auto flex h-20 max-w-md items-center justify-around px-4">
-                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="grupos.html">
-                    <span class="material-symbols-outlined !text-3xl">groups</span>
-                    <span class="text-xs font-medium">Meus Grupos</span>
-                </a>
-
-                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="explorar.html">
-                    <span class="material-symbols-outlined !text-3xl">language</span>
-                    <span class="text-xs font-medium">Explorar Grupos</span>
-                </a>
-
-                <a class="flex flex-col items-center justify-center text-primary" href="criar.html">
-                    <span class="material-symbols-outlined filled !text-3xl">add_circle</span>
-                    <span class="text-xs font-bold">Criar Grupo</span>
-                </a>
-
-                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="carona.html">
-                    <span class="material-symbols-outlined !text-3xl">directions_car</span>
-                    <span class="text-xs font-medium">Carona</span>
-                </a>
-    </div>
+    
+    <nav class="fixed bottom-0 w-full bg-background-dark/90 backdrop-blur border-t border-white/10">
+      <div class="mx-auto flex h-20 max-w-md items-center justify-around">
+        <a href="grupos.html" class="text-white/50"><span class="material-symbols-outlined !text-3xl">groups</span></a>
+        <a href="explorar.html" class="text-white/50"><span class="material-symbols-outlined !text-3xl">language</span></a>
+        <a href="criar.html" class="text-primary"><span class="material-symbols-outlined fill !text-3xl">add_circle</span></a>
+        <a href="carona.html" class="text-white/50"><span class="material-symbols-outlined !text-3xl">directions_car</span></a>
+      </div>
     </nav>
-    </div>
+  </div>
 
+  
+  <script>
+    const form = document.getElementById('createGroupForm');
+    const imageInput = document.getElementById('groupImage');
+    const previewImg = document.getElementById('previewImg');
+    const previewIcon = document.getElementById('previewIcon');
+
+    
+    imageInput.addEventListener('change', () => {
+      const file = imageInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          previewImg.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+   
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('groupName').value.trim();
+      const desc = document.getElementById('groupDesc').value.trim();
+      const tags = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                        .map(cb => cb.value);
+
+      
+      if (!tags.includes('estudo')) tags.push('estudo');
+      if (!tags.includes('academico')) tags.push('academico');
+
+      const imageFile = imageInput.files[0];
+      const defaultImage = "https://hotmart.s3.amazonaws.com/product_pictures/2bbcd440-e547-4d2a-9027-0d9e9b17a256/calculoI.jpg";
+
+      const saveGroup = (imageUrl) => {
+        const groups = JSON.parse(localStorage.getItem('userCreatedGroups') || '[]');
+
+        const newGroup = {
+          name: name || "Estudo Cálculo 1",
+          image: imageUrl,
+          members: Math.floor(Math.random() * 100) + 20,
+          tags: tags.join(' '),
+          desc: desc
+        };
+
+        groups.push(newGroup);
+        localStorage.setItem('userCreatedGroups', JSON.stringify(groups));
+
+        alert('Grupo criado com sucesso! 🎉');
+        window.location.href = 'explorar.html';
+      };
+
+      if (imageFile) {
+        const reader = new FileReader();
+        reader.onload = (e) => saveGroup(e.target.result);
+        reader.readAsDataURL(imageFile);
+      } else {
+        saveGroup(defaultImage);
+      }
+    });
+  </script>
 </body>
-
 </html>

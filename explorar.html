@@ -5,313 +5,158 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Explorar Comunidades</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script id="tailwind-config">
+
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#137fec",
+                        primary: "#137fec",
                         "background-light": "#f6f7f8",
                         "background-dark": "#101922",
                     },
-                    fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+                    fontFamily: { display: ["Plus Jakarta Sans", "sans-serif"] }
+                }
+            }
         }
     </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
 
-        .material-symbols-outlined.fill {
-            font-variation-settings:
-                'FILL' 1,
-                'wght' 700,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
     <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1, 'wght' 700 }
+        .hide-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark">
     <div class="relative min-h-screen w-full">
-        <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-            <div class="flex items-center p-4 pb-2 justify-between">
-                <div class="flex size-12 shrink-0 items-center justify-center">
 
-                </div>
-                <h1
-                    class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
-                    Explorar Grupos</h1>
-                <div class="flex size-12 shrink-0 items-center justify-center">
-                </div>
+       
+        <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+            <div class="flex items-center p-4 pb-2 justify-between">
+                <div class="size-12"></div>
+                <h1 class="text-lg font-bold text-center flex-1 text-gray-900 dark:text-white">Explorar Grupos</h1>
+                <div class="size-12"></div>
             </div>
         </header>
+
         <main class="pb-28">
+
+            
             <div class="px-4 py-3">
-                <div class="relative flex items-center">
-                    <label class="flex flex-col min-w-40 h-12 w-full">
-                        <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
-                            <div
-                                class="text-gray-400 dark:text-[#9dabb9] flex border-none bg-white dark:bg-[#1C2A38] items-center justify-center pl-4 rounded-l-xl border-r-0">
-                                <span class="material-symbols-outlined">search</span>
-                            </div>
-                            <input
-                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-white dark:bg-[#1C2A38] focus:border-none h-full placeholder:text-gray-400 dark:placeholder:text-[#9dabb9] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
-                                placeholder="Busque por comunidades, grupos..." value="" />
-                        </div>
-                    </label>
+                <div class="flex h-12 rounded-xl shadow-sm overflow-hidden bg-white dark:bg-[#1C2A38]">
+                    <div class="flex items-center px-4 text-gray-400">
+                        <span class="material-symbols-outlined">search</span>
+                    </div>
+                    <input id="searchInput" type="text" placeholder="Buscar por nome ou etiqueta..."
+                        class="w-full px-4 text-base bg-transparent text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none" />
                 </div>
             </div>
+
+            
             <div class="px-4 py-2">
-                <div class="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4"
-                    style="scrollbar-width: none; -ms-overflow-style: none;">
-                    <style>
-                        .hide-scrollbar::-webkit-scrollbar {
-                            display: none;
-                        }
-                    </style>
-                    <button
-                        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary text-white pl-4 pr-4">
+                <div class="flex gap-3 overflow-x-auto pb-2 hide-scrollbar">
+                    <button data-filter="todos" class="filter-btn active flex h-10 items-center gap-2 rounded-xl bg-primary text-white px-4 shrink-0">
                         <span class="material-symbols-outlined text-lg">public</span>
-                        <p class="text-sm font-medium leading-normal">Populares</p>
+                        <span class="text-sm font-medium">Populares</span>
                     </button>
-                    <button
-                        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1C2A38] pl-4 pr-4">
-                        <p class="text-gray-800 dark:text-white text-sm font-medium leading-normal">Mulheres</p>
+                    <button data-filter="mulheres" class="filter-btn flex h-10 items-center rounded-xl bg-white dark:bg-[#1C2A38] px-4 shrink-0">
+                        <span class="text-sm font-medium text-gray-800 dark:text-white">Mulheres</span>
                     </button>
-                    <button
-                        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1C2A38] pl-4 pr-4">
-                        <p class="text-gray-800 dark:text-white text-sm font-medium leading-normal">LGBTQIA+</p>
+                    <button data-filter="lgbtqia" class="filter-btn flex h-10 items-center rounded-xl bg-white dark:bg-[#1C2A38] px-4 shrink-0">
+                        <span class="text-sm font-medium text-gray-800 dark:text-white">LGBTQIA+</span>
                     </button>
-                    <button
-                        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1C2A38] pl-4 pr-4">
-                        <p class="text-gray-800 dark:text-white text-sm font-medium leading-normal">Inclusão</p>
+                    <button data-filter="inclusao" class="filter-btn flex h-10 items-center rounded-xl bg-white dark:bg-[#1C2A38] px-4 shrink-0">
+                        <span class="text-sm font-medium text-gray-800 dark:text-white">Inclusão</span>
                     </button>
-                    <button
-                        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1C2A38] pl-4 pr-4">
-                        <p class="text-gray-800 dark:text-white text-sm font-medium leading-normal">Novos</p>
+                    <button data-filter="diversidade" class="filter-btn flex h-10 items-center rounded-xl bg-white dark:bg-[#1C2A38] px-4 shrink-0">
+                        <span class="text-sm font-medium text-gray-800 dark:text-white">Diversidade</span>
                     </button>
-                    <button
-                        class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent pl-3 pr-3">
-                        <span class="material-symbols-outlined text-gray-600 dark:text-gray-300">tune</span>
+                    <button data-filter="novos" class="filter-btn flex h-10 items-center rounded-xl bg-white dark:bg-[#1C2A38] px-4 shrink-0">
+                        <span class="text-sm font-medium text-gray-800 dark:text-white">Novos</span>
                     </button>
                 </div>
             </div>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
 
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Abstract image for a programming for girls group"
-                        style='background-image: url("https://img.freepik.com/vetores-gratis/cute-girl-hacker-operando-laptop-cartoon-vector-icon-ilustracao-pessoas-tecnologia-isolada-plana_138676-9487.jpg?semt=ais_hybrid&w=740&q=80");'>
+            
+            <div class="px-4">
+                <div id="groupsGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+
+                    <div class="group-card flex flex-col gap-3" data-tags="mulheres tecnologia">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://img.freepik.com/vetores-gratis/cute-girl-hacker-operando-laptop-cartoon-vector-icon-ilustracao-pessoas-tecnologia-isolada-plana_138676-9487.jpg?w=740')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Programação para Meninas</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">52 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Tecnologia, Mulheres</p></div>
                     </div>
-                    <div class="flex flex-col">
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Programação para
-                            Meninas</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">52 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Tecnologia,
-                            Mulheres</p>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="lgbtqia diversidade apoio">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://www.uninassau.edu.br/sites/mauriciodenassau.edu.br/files/fields/imagemTopo/noticias/2022/06/rainbow-flag-4426296_1920.jpg')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Comunidade LGBTQIA+</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">112 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Diversidade, Apoio</p></div>
                     </div>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="academico ihc estudo">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://mecaluxbr.cdnwm.com/img/artigos-logistica/interacao-humana-objetivos-intensivos.1.6.jpg')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Amamos IHC</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">34 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Acadêmico, Estudo</p></div>
+                    </div>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="mulheres volei apoio">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_C-oD2uv-mHG9-_svliIkr7TADyVrBE3IKFLrmdf4sj7qlszQNLt5GX9qVJyVIBx2FNzD9HF7QWVGA6Jc42mdo8ffzS6UMqyMn74xbfXs0-98kxqUTd9WLppdepgHyHWYWBucvemDuSsXiKrNO1WK6yFJ5WgxQOvGr_hq_IPdx44z51LObYtrzK6-vrDL1olu2SKfh7tuqgIJ1nw3QnszYfXYX5BbEtQMAF-5Pe6Z7SGwePbZSocUiBC4rdkgrQ1maNfZdDAZ8XwF')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Vôlei das Meninas</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">78 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Mulheres, Apoio</p></div>
+                    </div>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="inclusao acessibilidade diversidade">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://sjmg.trf6.jus.br/wp-content/uploads/2024/12/Portal-1.png')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Apoio a Alunos com Deficiência</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">25 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Inclusão, Acessibilidade</p></div>
+                    </div>
+
+                    <a href="cotistas.html" class="group-card flex flex-col gap-3" data-tags="cotistas diversidade academico">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://static.mundoeducacao.uol.com.br/vestibular/2019/10/lei-de-cotas.jpg')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Estudantes Cotistas</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">41 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Acadêmico, Diversidade</p></div>
+                    </a>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="black carreira diversidade tecnologia">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://itbrief.co.uk/uploads/story/2023/02/24/GettyImages-1127257350.webp')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Mentoria Black Tech</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">33 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Carreira, Suporte</p></div>
+                    </div>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="pesquisa academico">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Iniciação Científica</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">104 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Pesquisa, Bolsas</p></div>
+                    </div>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="robotica tecnologia">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Laboratório de Robótica</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">28 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Tecnologia, Inovação</p></div>
+                    </div>
+
+                    <div class="group-card flex flex-col gap-3" data-tags="livros leitura lazer">
+                        <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800')"></div>
+                        <div><p class="font-medium text-gray-900 dark:text-white">Clube do Livro Acadêmico</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">67 membros</p><p class="text-sm text-gray-500 dark:text-[#9dabb9]">Leitura, Lazer</p></div>
+                    </div>
+
                 </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Abstract image for a LGBTQIA+ community"
-                        style='background-image: url("https://www.uninassau.edu.br/sites/mauriciodenassau.edu.br/files/fields/imagemTopo/noticias/2022/06/rainbow-flag-4426296_1920.jpg");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Comunidade
-                            LGBTQIA+</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">112 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Diversidade,
-                            Apoio</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Abstract image for an intersectionality studies group"
-                        style='background-image: url("https://mecaluxbr.cdnwm.com/img/artigos-logistica/interacao-humana-objetivos-intensivos.1.6.jpg");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Amamos IHC ❤️</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">34 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Acadêmico,
-                            Estudo</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Abstract image for an afro-descendant students union"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_C-oD2uv-mHG9-_svliIkr7TADyVrBE3IKFLrmdf4sj7qlszQNLt5GX9qVJyVIBx2FNzD9HF7QWVGA6Jc42mdo8ffzS6UMqyMn74xbfXs0-98kxqUTd9WLppdepgHyHWYWBucvemDuSsXiKrNO1WK6yFJ5WgxQOvGr_hq_IPdx44z51LObYtrzK6-vrDL1olu2SKfh7tuqgIJ1nw3QnszYfXYX5BbEtQMAF-5Pe6Z7SGwePbZSocUiBC4rdkgrQ1maNfZdDAZ8XwF");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Vôlei das Meninas
-                        </p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">78 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Mulheres, Apoio
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Image representing a support group for students with disabilities"
-                        style='background-image: url("https://sjmg.trf6.jus.br/wp-content/uploads/2024/12/Portal-1.png");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Apoio a Alunos com
-                            Deficiência</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">25 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Inclusão,
-                            Acessibilidade</p>
-                    </div>
-                </div>
-
-                <a href="cotistas.html" class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="A group of female entrepreneurs"
-                        style='background-image: url("https://static.mundoeducacao.uol.com.br/vestibular/2019/10/lei-de-cotas.jpg");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Estudantes
-                            Cotistas</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">41 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Acadêmico,
-                            Diversidade</p>
-                    </div>
-                </a>
-
-                <!-- <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Grupo do Coletivo Negritude"
-                        style='background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=300&q=80");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Coletivo Negritude</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">89 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Movimento, Identidade</p>
-                    </div>
-                </div> -->
-
-                <!-- <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Estudos afro-brasileiros"
-                        style='background-image: url("https://images.unsplash.com/photo-1532187643603-ba119ca4109e?auto=format&fit=crop&w=300&q=80");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Núcleo Afro-Brasileiro</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">56 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Pesquisa, História</p>
-                    </div>
-                </div> -->
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Mentoria para calouros"
-                        style='background-image: url("https://itbrief.co.uk/uploads/story/2023/02/24/GettyImages-1127257350.webp");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Mentoria Black
-                            Tech</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">33 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Carreira,
-                            Suporte</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Laboratorio de pesquisa cientifica"
-                        style='background-image: url("https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=300&q=80");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Iniciação
-                            Científica</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">104 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Pesquisa, Bolsas
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Robótica e Tecnologia"
-                        style='background-image: url("https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=300&q=80");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Laboratório de
-                            Robótica</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">28 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Tecnologia,
-                            Inovação</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                        data-alt="Livros e café"
-                        style='background-image: url("https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=300&q=80");'>
-                    </div>
-                    <div>
-                        <p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Clube do Livro
-                            Acadêmico</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">67 membros</p>
-                        <p class="text-gray-500 dark:text-[#9dabb9] text-sm font-normal leading-normal">Leitura, Lazer
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </main>
-        <nav
-            class="fixed bottom-0 left-0 right-0 z-20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
+
+       
+        <nav class="fixed bottom-0 left-0 right-0 z-20 bg-white/80 dark:bg-background-dark/80 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800">
             <div class="mx-auto flex h-20 max-w-md items-center justify-around px-4">
-                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="grupos.html">
+                <a href="grupos.html" class="flex flex-col items-center text-gray-500 hover:text-primary dark:text-gray-400">
                     <span class="material-symbols-outlined !text-3xl">groups</span>
                     <span class="text-xs font-medium">Meus Grupos</span>
                 </a>
-
-                <a class="flex flex-col items-center justify-center text-primary" href="explorar.html">
-                    <span class="material-symbols-outlined filled !text-3xl">language</span>
-                    <span class="text-xs font-bold">Explorar Grupos</span>
+                <a href="explorar.html" class="flex flex-col items-center text-primary">
+                    <span class="material-symbols-outlined fill !text-3xl">language</span>
+                    <span class="text-xs font-bold">Explorar</span>
                 </a>
-
-                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="criar.html">
+                <a href="criar.html" class="flex flex-col items-center text-gray-500 hover:text-primary dark:text-gray-400">
                     <span class="material-symbols-outlined !text-3xl">add_circle</span>
-                    <span class="text-xs font-medium">Criar Grupo</span>
+                    <span class="text-xs font-medium">Criar</span>
                 </a>
-
-                <a class="flex flex-col items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary"
-                    href="carona.html">
+                <a href="carona.html" class="flex flex-col items-center text-gray-500 hover:text-primary dark:text-gray-400">
                     <span class="material-symbols-outlined !text-3xl">directions_car</span>
                     <span class="text-xs font-medium">Carona</span>
                 </a>
@@ -319,6 +164,74 @@
         </nav>
     </div>
 
-</body>
+    
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const groupCards = document.querySelectorAll('.group-card');
+        const searchInput = document.getElementById('searchInput');
+        let activeFilter = 'todos';
 
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-white', 'dark:bg-[#1C2A38]', 'text-gray-800', 'dark:text-white');
+                });
+                btn.classList.add('bg-primary', 'text-white');
+                btn.classList.remove('bg-white', 'dark:bg-[#1C2A38]');
+                activeFilter = btn.dataset.filter;
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener('input', applyFilters);
+
+        function applyFilters() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            document.querySelectorAll('.group-card').forEach(card => {
+                const title = card.querySelector('p.font-medium')?.textContent.toLowerCase() || '';
+                const tags = (card.dataset.tags || '').toLowerCase();
+
+                const matchesCategory = activeFilter === 'todos' || tags.includes(activeFilter);
+                const matchesSearch = searchTerm === '' || title.includes(searchTerm) || tags.includes(searchTerm);
+
+                card.style.display = (matchesCategory && matchesSearch) ? '' : 'none';
+            });
+        }
+
+        applyFilters();
+    </script>
+
+   
+    <script>
+        const savedGroups = JSON.parse(localStorage.getItem('userCreatedGroups') || '[]');
+        const grid = document.getElementById('groupsGrid');
+
+        savedGroups.forEach(g => {
+            const card = document.createElement('div');
+            card.className = 'group-card flex flex-col gap-3';
+            card.dataset.tags = g.tags;
+
+            const tagsFormatted = g.tags.split(' ').map(t => 
+                t === 'academico' ? 'Acadêmico' : 
+                t === 'estudo' ? 'Estudo' : 
+                t.charAt(0).toUpperCase() + t.slice(1)
+            ).join(', ');
+
+            card.innerHTML = `
+                <div class="aspect-square bg-cover bg-center rounded-xl" style="background-image: url('${g.image}')"></div>
+                <div>
+                    <p class="font-medium text-gray-900 dark:text-white">${g.name}</p>
+                    <p class="text-sm text-gray-500 dark:text-[#9dabb9]">${g.members} membros</p>
+                    <p class="text-sm text-gray-500 dark:text-[#9dabb9]">${tagsFormatted}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+
+        
+        applyFilters();
+    </script>
+</body>
 </html>
